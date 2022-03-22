@@ -1,0 +1,145 @@
+body{
+    background-color: #f2f3f5;
+    font-family: Roboto;
+}
+
+header{
+    background-color: #8144ff;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+h1{
+    font-size: xx-large;
+    text-align: center;
+    margin: auto;
+    display: inline;
+}
+
+.logo{
+    border-radius: 100px;
+    display: inline;
+}
+
+main{
+    background-color:#8144ff;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 1%;
+    display: inline-block;
+}
+
+footer{
+    background-color: #8144ff;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+ul{
+    margin-top: 0;
+    margin-bottom: 0;
+    display: inline;
+    text-align: center;
+}
+
+li{
+    list-style-type: none;
+    display: inline;
+    font-size: large;
+    font-weight: bold;
+    padding: 1%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.buscar{
+    display: inline;
+    border: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.card {
+    padding: 10px;
+    text-align: center;
+    background-color: #d85959;
+    border-radius: 3%;
+  }
+
+  .column {
+    display: inline-block;
+    width: 20%;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+.row {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.filtros{
+    float: inline-start;
+    /* display: block; */
+}
+
+.ubicacion{
+    display: inline;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.ubicacion__parrafo{
+    display: inline;
+    position: absolute;
+    margin-left: 2%;
+    margin-right: 2%;
+    text-align: justify;
+    font-family: Roboto;
+}
+
+.mapa{
+    display: inline;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+}
+
+.tituloUbicacion{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.campos {
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #8144ff;
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    margin-top: 6px; 
+    margin-bottom: 16px; 
+    /* resize: vertical ; */
+  }
+
+.enviar {
+    background-color: #3c2add;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+.enviar:hover {
+    background-color: #f70bf7;
+  }
+
+.contacto{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}

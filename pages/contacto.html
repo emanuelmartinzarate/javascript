@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+    <title>Contacto</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <img class="logo" src="../img/logo.jpg" alt="Logo de SuperYo">
+            <h1>SUPERYO</h1>
+            <ul>
+                <li><a href="../index.html">INICIO</a></li>
+                <li><a href="productos.html">PRODUCTOS</a></li>
+                <li><a href="ofertas.html">OFERTAS</a></li>
+                <li><a href="ubicacion.html">UBICACION</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+            <input class="buscar" type="text" id="buscar" placeholder="Buscar">
+            <img src="../img/cart.png" alt="Carrito">
+        </nav>
+    </header>
+    <main>
+        <section>
+            <form class="contacto">
+                <div>
+                    <label for="apellido">Apellido</label>
+                    <input class="campos" type="text" id="apellido" required placeholder="Ingrese su apellido"> 
+                </div>
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input class="campos" type="text" id="nombre" required placeholder="Ingrese su nombre"> 
+                </div>
+                <div>
+                    <label for="e-mail">E-mail</label>
+                    <input class="campos" type="email" id="e-mail" required placeholder="Ingrese su e-mail">
+                </div>
+                <div>
+                    <label for="celular">Celular</label>
+                    <input class="campos" type="tel" id="celular" required placeholder="Ingrese su celular">
+                </div>
+                <div>
+                    <label for="comentario">Comentario</label>
+                    <textarea class="campos" name="" id="comentario" cols="30" rows="10" required placeholder="Ingrese su comentario"></textarea>
+                </div>
+                <div>
+                    <input class="enviar" type="submit" value="Enviar">
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <h2>En esta parte vamos a agregar las redes sociales</h2>
+    </footer>
+</body>
+</html>
