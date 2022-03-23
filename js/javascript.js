@@ -21,7 +21,7 @@ function carrito(){
 
     for(let i=0;i<cantidadProd;i++){
         if(cantidadProd){
-            total= calcularTotal(total,precioProd);
+            total= calcularTotal(total,precioProd); 
         }
     }
 
