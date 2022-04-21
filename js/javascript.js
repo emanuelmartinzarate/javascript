@@ -15,38 +15,42 @@ const products = [
     {id:4,title:'product4',description:'description product 4',price:1000,pictureUrl:'picture4',category:'A',stock:'20'}
 ]
 
-const cart = []
+let productsInCart = []
 
 function addToCart(productId){
     const product = products.find( product => product.id === productId );
-    //me fijo en el localstorage si ya tengo un carrito
-    const productsInCart = JSON.parse(localStorage.getItem("cart"))
-    if(!productsInCart){
-        cart.push(product)
-        localStorage.setItem("cart",JSON.stringify(cart))
-    }else{
-        productsInCart.push(product)
-        localStorage.setItem("cart",JSON.stringify(productsInCart))
-    }
+    const cart = JSON.parse(localStorage.getItem("cart")) || []
+    cart.push(product)
+    localStorage.setItem("cart",JSON.stringify(cart))
 }
 
-function showCart(){
-    const productsInCart = JSON.parse(localStorage.getItem("cart"))
-    if(productsInCart){
-        let listProd = document.getElementById("listCart");
+function showProductsInCart(productsIncart){
+    let listProd = document.getElementById("listCart");
             for(const product of productsInCart){
+                const {id, title, price} = product
                 let contenedor = document.createElement("div");
                 contenedor.className = "column"    
                 contenedor.innerHTML = `<div class="card">
-                                        <h3> Id: ${product.id} </h3>
-                                        <p> Producto: ${product.title}</p>
-                                        <b> $ ${product.price} </b><br>
+                                        <h3> Id: ${id} </h3>
+                                        <p> Producto: ${title}</p>
+                                        <b> $ ${price} </b><br>
                                         </div>`;
                 listProd.appendChild(contenedor);
             }
-    }
 }
 
+function showEmptyCart(){
+    let listProd = document.getElementById("listCart");
+    let contenedor = document.createElement("div");
+    contenedor.className = "column"
+    contenedor.innerHTML = `<span>Carrito vacio</span>`
+    listProd.appendChild(contenedor);
+}
+
+function showCart(){
+    productsInCart = JSON.parse(localStorage.getItem("cart"))
+    productsInCart ? showProductsInCart(productsInCart) : showEmptyCart()
+}
 
 class Ecommerce{
 
@@ -63,13 +67,14 @@ class Ecommerce{
     listProducts(){
         let listProd = document.getElementById("showProducts");
         for(const product of this.products){
+            const {id,title,price} = product
             let contenedor = document.createElement("div");
             contenedor.className = "column"    
             contenedor.innerHTML = `<div class="card">
-                                    <h3> Id: ${product.id} </h3>
-                                    <p> Producto: ${product.title}</p>
-                                    <b> $ ${product.price} </b><br>
-                                    <button onclick="addToCart(${product.id})">Agregar al carrito</button>
+                                    <h3> Id: ${id} </h3>
+                                    <p> Producto: ${title}</p>
+                                    <b> $ ${price} </b><br>
+                                    <button onclick="addToCart(${id})">Agregar al carrito</button>
                                     </div>`;
             listProd.appendChild(contenedor);
         }
