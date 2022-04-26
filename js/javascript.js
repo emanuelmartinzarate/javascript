@@ -22,6 +22,13 @@ function addToCart(productId){
     const cart = JSON.parse(localStorage.getItem("cart")) || []
     cart.push(product)
     localStorage.setItem("cart",JSON.stringify(cart))
+
+    Toastify({
+        text: "Se agrego el producto al carrito!",
+        duration: 3000,
+        gravity: 'top',
+        position: 'right'
+    }).showToast();
 }
 
 function showProductsInCart(productsIncart){
