@@ -7,13 +7,13 @@ function send(){
     alert(`data: ${data} Comentarios: ${coments}`);
 }
 
+let products = []
 
-const products = [
-    {id:1,title:'product1',description:'description product 1',price:1000,pictureUrl:'picture1',category:'A',stock:'20'},
-    {id:2,title:'product2',description:'description product 2',price:1000,pictureUrl:'picture2',category:'A',stock:'20'},
-    {id:3,title:'product3',description:'description product 3',price:1000,pictureUrl:'picture3',category:'A',stock:'20'},
-    {id:4,title:'product4',description:'description product 4',price:1000,pictureUrl:'picture4',category:'A',stock:'20'}
-]
+fetch('./data/products.json')
+.then((response) => response.json())
+.then((data)=>  {
+                    products = console.log(data)
+                })
 
 let productsInCart = []
 
