@@ -4,17 +4,11 @@ function send(){
         return `${input.id} : ${input.value}`;
     });
 
-    alert(`data: ${data} Comentarios: ${coments}`);
+    if(data.length > 0 && coments!="")
+        alert(`data: ${data} Comentarios: ${coments}`);
 }
 
 let products = []
-
-fetch('./data/products.json')
-.then((response) => response.json())
-.then((data)=>  {
-                    products = console.log(data)
-                })
-
 let productsInCart = []
 
 function addToCart(productId){
@@ -61,19 +55,9 @@ function showCart(){
 
 class Ecommerce{
 
-    constructor(products){
-        this.products=products;
-    }
-    createProduct(id,name,price) {
-        let product = new Product(id,name,price);
-        return product;
-    }
-    addProduct(product){
-        this.products.push(product);
-    }
     listProducts(){
         let listProd = document.getElementById("showProducts");
-        for(const product of this.products){
+        for(const product of products){
             const {id,title,price} = product
             let contenedor = document.createElement("div");
             contenedor.className = "column"    
@@ -89,16 +73,15 @@ class Ecommerce{
 }
 
 
-class Product{
-    constructor(id,name,price){
-        this.id=id;
-        this.name=name;
-        this.price=price;
-    }
-}
+async function init(){
+    const ecommerce = new Ecommerce();
 
-const ecommerce = new Ecommerce(products);
+    await fetch('./data/products.json')
+    .then((response) => response.json())
+    .then((data)=>  {
+                        products = [...data]
+                    })
+    .catch((error)=> console.log(error))
 
-function init(){
     ecommerce.listProducts()
 }
